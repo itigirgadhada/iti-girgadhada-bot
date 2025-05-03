@@ -32,7 +32,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("ફીટર", callback_data='trade_fitter')],
             [InlineKeyboardButton("વેલ્ડર", callback_data='trade_welder')],
             [InlineKeyboardButton("મિકેનિક ડીઝલ", callback_data='trade_mechanic_diesel')],
-            [InlineKeyboardButton("હેલ્થ સેનેટરી ઇન્સ્પેક્ટર", callback_data='trade_health_sanit caramel inspector')]
+            [InlineKeyboardButton("હેલ્થ સેનેટરી ઇન્સ્પેક્ટર", callback_data='trade_health_sanitary_inspector')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         await query.message.reply_text(
@@ -42,37 +42,37 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == 'trade_copa':
         await query.message.reply_text(
             "📚 **COPA (કમ્પ્યુટર ઓપરેટર એન્ડ પ્રોગ્રામિંગ આસિસ્ટન્ટ)**\n"
-            "- અવધિ: 1 વર્ષ\n"
+            "- સમયગાળો: 1 વર્ષ\n"
             "- ઉપલબ્ધ બેઠકો: 72"
         )
     elif query.data == 'trade_electrician':
         await query.message.reply_text(
             "📚 **ઇલેક્ટ્રિશિયન**\n"
-            "- અવધિ: 2 વર્ષ\n"
+            "- સમયગાળો: 2 વર્ષ\n"
             "- ઉપલબ્ધ બેઠકો: 60"
         )
     elif query.data == 'trade_fitter':
         await query.message.reply_text(
             "📚 **ફીટર**\n"
-            "- અવધિ: 2 વર્ષ\n"
+            "- સમયગાળો: 2 વર્ષ\n"
             "- ઉપલબ્ધ બેઠકો: 40"
         )
     elif query.data == 'trade_welder':
         await query.message.reply_text(
             "📚 **વેલ્ડર**\n"
-            "- અવધિ: 1 વર્ષ\n"
+            "- સમયગાળો: 1 વર્ષ\n"
             "- ઉપલબ્ધ બેઠકો: 40"
         )
     elif query.data == 'trade_mechanic_diesel':
         await query.message.reply_text(
             "📚 **મિકેનિક ડીઝલ**\n"
-            "- અવધિ: 1 વર્ષ\n"
+            "- સમયગાળો: 1 વર્ષ\n"
             "- ઉપલબ્ધ બેઠકો: 72"
         )
     elif query.data == 'trade_health_sanitary_inspector':
         await query.message.reply_text(
             "📚 **હેલ્થ સેનેટરી ઇન્સ્પેક્ટર**\n"
-            "- અવધિ: 1 વર્ષ\n"
+            "- સમયગાળો: 1 વર્ષ\n"
             "- ઉપલબ્ધ બેઠકો: 72"
         )
     elif query.data == 'eligibility':
