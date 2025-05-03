@@ -81,7 +81,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     elif query.data == 'documents':
         await query.message.reply_text(
-            "એડમિશન માટે જરૂરી ડોક્યુમેન્ટ્સ:\n1. લિવિંગ સર્ટિફિકેટ\n2. માર્કશીટ\n3. જાતિનો દાખલો\n4. આધાર કાર્ડ"
+            "એડમિશન માટે જરૂરી ડોક્યુમેન્ટ્સ:\n1. લિવિંગ સર્ટિફિકેટ\n2. ધોરણ ૦૮/૧૦ની માર્કશીટ\n3. જાતિનો દાખલો\n4. આધાર કાર્ડ"
         )
     elif query.data == 'fees':
         await query.message.reply_text(
