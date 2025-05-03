@@ -23,11 +23,57 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
+
     if query.data == 'trades':
+        # ટ્રેડ્સની સૂચિ બતાવો
+        keyboard = [
+            [InlineKeyboardButton("COPA", callback_data='trade_copa')],
+            [InlineKeyboardButton("ઇલેક્ટ્રિશિયન", callback_data='trade_electrician')],
+            [InlineKeyboardButton("ફીટર", callback_data='trade_fitter')],
+            [InlineKeyboardButton("વેલ્ડર", callback_data='trade_welder')],
+            [InlineKeyboardButton("મિકેનિક ડીઝલ", callback_data='trade_mechanic_diesel')],
+            [InlineKeyboardButton("હેલ્થ સેનેટરી ઇન્સ્પેક્ટર", callback_data='trade_health_sanit caramel inspector')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
         await query.message.reply_text(
-            "ITI ગીરગઢડામાં નીચેના ટ્રેડ્સ ઉપલબ્ધ છે:\n"
-            "1. COPA (1 વર્ષ)\n2. ઇલેક્ટ્રિશિયન (2 વર્ષ)\n3. ફીટર (2 વર્ષ)\n"
-            "4. વેલ્ડર (1 વર્ષ)\n5. મિકેનિક ડીઝલ (1 વર્ષ)\n6. હેલ્થ સેનેટરી ઇન્સ્પેક્ટર (1 વર્ષ)"
+            "કૃપા કરી નીચેના ટ્રેડ્સમાંથી એક પસંદ કરો:",
+            reply_markup=reply_markup
+        )
+    elif query.data == 'trade_copa':
+        await query.message.reply_text(
+            "📚 **COPA (કમ્પ્યુટર ઓપરેટર એન્ડ પ્રોગ્રામિંગ આસિસ્ટન્ટ)**\n"
+            "- અવધિ: 1 વર્ષ\n"
+            "- ઉપલબ્ધ બેઠકો: 72"
+        )
+    elif query.data == 'trade_electrician':
+        await query.message.reply_text(
+            "📚 **ઇલેક્ટ્રિશિયન**\n"
+            "- અવધિ: 2 વર્ષ\n"
+            "- ઉપલબ્ધ બેઠકો: 60"
+        )
+    elif query.data == 'trade_fitter':
+        await query.message.reply_text(
+            "📚 **ફીટર**\n"
+            "- અવધિ: 2 વર્ષ\n"
+            "- ઉપલબ્ધ બેઠકો: 40"
+        )
+    elif query.data == 'trade_welder':
+        await query.message.reply_text(
+            "📚 **વેલ્ડર**\n"
+            "- અવધિ: 1 વર્ષ\n"
+            "- ઉપલબ્ધ બેઠકો: 40"
+        )
+    elif query.data == 'trade_mechanic_diesel':
+        await query.message.reply_text(
+            "📚 **મિકેનિક ડીઝલ**\n"
+            "- અવધિ: 1 વર્ષ\n"
+            "- ઉપલબ્ધ બેઠકો: 72"
+        )
+    elif query.data == 'trade_health_sanitary_inspector':
+        await query.message.reply_text(
+            "📚 **હેલ્થ સેનેટરી ઇન્સ્પેક્ટર**\n"
+            "- અવધિ: 1 વર્ષ\n"
+            "- ઉપલબ્ધ બેઠકો: 72"
         )
     elif query.data == 'eligibility':
         await query.message.reply_text(
