@@ -28,7 +28,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == 'trades':
         keyboard = [
-            [InlineKeyboardButton("COPA", callback_data='trade_copa')],
+            [InlineKeyboardButton("COPAઅ", callback_data='trade_copa')],
             [InlineKeyboardButton("ઇલેક્ટ્રિશિયન", callback_data='trade_electrician')],
             [InlineKeyboardButton("ફીટર", callback_data='trade_fitter')],
             [InlineKeyboardButton("વેલ્ડર", callback_data='trade_welder')],
@@ -90,7 +90,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     elif query.data == 'process':
         await query.message.reply_text(
-            "એડમિશન પ્રોસેસ:\n1. ઓનલાઈન ફોર્મ ભરો\n2. જરૂરી ડોક્યુમેન્ટ્સ અપલોડ કરો\n3. ₹50 ફી ઓનલાઈન ચૂકવો\n4. ફોર્મ સબમિટ કરો"
+            "એડમિશન પ્રોસેસ:\n1.ઓનલાઈન ફોર્મ ભરો\n2. જરૂરી ડોક્યુમેન્ટ્સ અપલોડ કરો\n3. ₹50 ફી ઓનલાઈન ચૂકવો\n4. ફોર્મ સબમિટ કરો\n5. સંસ્થા ખાતેથી વીનામુલ્યે ફોર્મ ભરી આપવામા આવશે."
         )
     elif query.data == 'facilities':
         await query.message.reply_text(
@@ -104,7 +104,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text(
             "📄 **એડમિશન PDF ડાઉનલોડ**:\n"
             "એડમિશન સંબંધિત વિગતો માટે PDF ફાઈલ ડાઉનલોડ કરો:\n"
-            "[ડાઉનલોડ કરો](https://github.com/your-username/iti-girgadhada-bot/raw/main/admission_info.pdf)"
+            "[ડાઉનલોડ કરો](https://github.com/your-username/iti-girgadhada-bot/blob/main/admission_info.pdf)"
         )
 
 def main():
