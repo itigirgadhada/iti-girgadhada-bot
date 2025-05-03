@@ -28,7 +28,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == 'trades':
         keyboard = [
-            [InlineKeyboardButton("COPAઅ", callback_data='trade_copa')],
+            [InlineKeyboardButton("COPA", callback_data='trade_copa')],
             [InlineKeyboardButton("ઇલેક્ટ્રિશિયન", callback_data='trade_electrician')],
             [InlineKeyboardButton("ફીટર", callback_data='trade_fitter')],
             [InlineKeyboardButton("વેલ્ડર", callback_data='trade_welder')],
@@ -104,7 +104,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.message.reply_text(
             "📄 **એડમિશન PDF ડાઉનલોડ**:\n"
             "એડમિશન સંબંધિત વિગતો માટે PDF ફાઈલ ડાઉનલોડ કરો:\n"
-            "[ડાઉનલોડ કરો](https://github.com/your-username/iti-girgadhada-bot/blob/main/admission_info.pdf)"
+            "[ડાઉનલોડ કરો](https://drive.google.com/file/d/1G1R9M-osMEGqOtCOcHSCkhnCzwBcobFc/view?usp=sharing)"
         )
 
 def main():
