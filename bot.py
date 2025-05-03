@@ -11,7 +11,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("✅ એલિજિબિલિટી", callback_data='eligibility')],
         [InlineKeyboardButton("📝 ડોક્યુમેન્ટ્સ", callback_data='documents')],
         [InlineKeyboardButton("💵 ફી", callback_data='fees')],
-        [InlineKeyboardButton("📋 એડમિશન પ્રોસેસ", callback_data='process')]
+        [InlineKeyboardButton("📋 એડમિશન પ્રોસેસ", callback_data='process')],
+        [InlineKeyboardButton("🎁 સંસ્થા તરફથી મળતી સુવિધા", callback_data='facilities')],
+        [InlineKeyboardButton("📄 એડમિશન PDF ડાઉનલોડ", callback_data='download_pdf')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(
@@ -25,7 +27,6 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     if query.data == 'trades':
-        # ટ્રેડ્સની સૂચિ બતાવો
         keyboard = [
             [InlineKeyboardButton("COPA", callback_data='trade_copa')],
             [InlineKeyboardButton("ઇલેક્ટ્રિશિયન", callback_data='trade_electrician')],
@@ -90,6 +91,20 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == 'process':
         await query.message.reply_text(
             "એડમિશન પ્રોસેસ:\n1. ઓનલાઈન ફોર્મ ભરો\n2. જરૂરી ડોક્યુમેન્ટ્સ અપલોડ કરો\n3. ₹50 ફી ઓનલાઈન ચૂકવો\n4. ફોર્મ સબમિટ કરો"
+        )
+    elif query.data == 'facilities':
+        await query.message.reply_text(
+            "🎁 **સંસ્થા તરફથી મળતી સુવિધા**:\n"
+            "1. વિના મૂલ્યે બસ પાસ\n"
+            "2. ₹4800/- શિષ્યવૃત્તિ\n"
+            "3. મહિલા તાલીમાર્થીઓને સાયકલ સહાય\n"
+            "4. ધોરણ 12 સમકક્ષતાનો લાભ"
+        )
+    elif query.data == 'download_pdf':
+        await query.message.reply_text(
+            "📄 **એડમિશન PDF ડાઉનલોડ**:\n"
+            "એડમિશન સંબંધિત વિગતો માટે PDF ફાઈલ ડાઉનલોડ કરો:\n"
+            "[ડાઉનલોડ કરો](https://github.com/your-username/iti-girgadhada-bot/raw/main/admission_info.pdf)"
         )
 
 def main():
