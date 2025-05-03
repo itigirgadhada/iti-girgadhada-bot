@@ -12,6 +12,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📝 ડોક્યુમેન્ટ્સ", callback_data='documents')],
         [InlineKeyboardButton("💵 ફી", callback_data='fees')],
         [InlineKeyboardButton("📋 એડમિશન પ્રોસેસ", callback_data='process')]
+        [InlineKeyboardButton("📋 સંસ્થા તરફથી મળતી સુવીધા", callback_data='help_ser')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(
@@ -90,6 +91,10 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == 'process':
         await query.message.reply_text(
             "એડમિશન પ્રોસેસ:\n1. ઓનલાઈન ફોર્મ ભરો\n2. જરૂરી ડોક્યુમેન્ટ્સ અપલોડ કરો\n3. ₹50 ફી ઓનલાઈન ચૂકવો\n4. ફોર્મ સબમિટ કરો\n5. સંસ્થા ખાતેથી ઓનલાઈન ફોર્મ વિના મુલ્યે ભરી આપવામા આવશે."
+        )
+    elif query.data == 'help_ser':
+        await query.message.reply_text(
+            "સંસ્થા તરફથી મળતી સુવીધા: \n1.વિના મુલ્યે બસ રેલ્વે પાસ\n2. ૪૮૦૦/- રૂ શિષ્યવૃતી \n3. મહીલા તાલીમાર્થી ને સાયકલ સહાય\n4. ધોરણ ૧૨ સમકક્ષતાનો લાભ."
         )
 
 def main():
