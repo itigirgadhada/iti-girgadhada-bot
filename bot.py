@@ -13,6 +13,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("💵 ફી", callback_data='fees')],
         [InlineKeyboardButton("📋 એડમિશન પ્રોસેસ", callback_data='process')],
         [InlineKeyboardButton("🎁 સંસ્થા તરફથી મળતી સુવિધા", callback_data='facilities')],
+        [InlineKeyboardButton("📅 ફોર્મ ભર્યા બાદની પ્રોસેસ", callback_data='post_form_process')],
         [InlineKeyboardButton("📄 એડમિશન PDF ડાઉનલોડ", callback_data='download_pdf')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -105,6 +106,15 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📄 **એડમિશન PDF ડાઉનલોડ**:\n"
             "એડમિશન સંબંધિત વિગતો માટે PDF ફાઈલ ડાઉનલોડ કરો:\n"
             "[ડાઉનલોડ કરો](https://drive.google.com/file/d/1G1R9M-osMEGqOtCOcHSCkhnCzwBcobFc/view?usp=sharing)"
+        )
+    elif query.data == 'post_form_process':
+        await query.message.reply_text(
+            "📅 **ફોર્મ ભર્યા બાદની પ્રોસેસ**:\n"
+            "1. ફોર્મ ભરતી વખતે તમારે તમારી પસંદગીના ટ્રેડ ઉમેરવાના રહેશે.\n"
+            "2. પ્રથમ રાઉન્ડનું પરિણામ જાહેર થશે, અને તમને મેસેજ દ્વારા જાણ કરવામાં આવશે.\n"
+            "3. ફોર્મ ભરતી વખતે આપેલા ડોક્યુમેન્ટ્સ અને જરૂરી ફી સાથે, તમને મળેલ ITIમાં ડોક્યુમેન્ટ વેરિફિકેશન માટે જવું પડશે.\n"
+            "4. ડોક્યુમેન્ટ વેરિફિકેશન પછી તમારું એડમિશન કન્ફર્મ થશે.\n"
+            "⚠️ **નોંધ**: જો તમે નિર્ધારિત સમયમાં ડોક્યુમેન્ટ વેરિફાય નહીં કરાવો, તો તમારું એડમિશન રદ્દ થઈ શકે છે."
         )
 
 def main():
